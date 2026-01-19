@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mathe Prüfungs Themen Überblick</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bgGlow"></div>
+
+  <header class="wrap header">
+    <div class="titleBlock">
+      <h1>Mathe Prüfungs Themen</h1>
+      <p class="sub">Übersicht, Formeln, typische Fallen, plus Quiz</p>
+    </div>
+
+    <div class="controls">
+      <div class="searchBox">
+        <input id="search" type="search" placeholder="Suchen, z.B. Prozent, Bruch, Funktion" autocomplete="off" />
+        <span class="hint">Enter ist egal, tippen reicht</span>
+      </div>
+
+      <div class="btnRow">
+        <button class="btn" id="expandAll">Alles aufklappen</button>
+        <button class="btn ghost" id="collapseAll">Alles zuklappen</button>
+        <button class="btn neon" id="startQuiz">Quiz starten</button>
+      </div>
+
+      <div class="progressCard">
+        <div class="progressTop">
+          <span>Fortschritt</span>
+          <span id="progressText">0 von 0</span>
+        </div>
+        <div class="bar">
+          <div class="barFill" id="barFill"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="cards" class="grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>
+      Tipp: Such nach einem Thema, klapp es auf, mach 2 Mini Aufgaben dazu.
+      Wenn du magst, sag mir deine Klassenstufe und was sicher dran kommt, dann sortiere ich dir das passend.
+    </p>
+  </footer>
+
+  <!-- Quiz Modal -->
+  <div class="modal hidden" id="quizModal" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+    <div class="modalCard">
+      <div class="modalHead">
+        <h2 id="quizTitle">Quiz</h2>
+        <button class="iconBtn" id="closeQuiz" aria-label="Schließen">✕</button>
+      </div>
+
+      <div class="quizMeta">
+        <span id="quizTopic" class="pill">Thema</span>
+        <span id="quizCount" class="pill ghost">0 von 0</span>
+      </div>
+
+      <div class="quizBox">
+        <h3 id="quizQ">Frage</h3>
+        <div class="answer hidden" id="quizA"></div>
+      </div>
+
+      <div class="modalBtns">
+        <button class="btn ghost" id="revealAnswer">Antwort zeigen</button>
+        <button class="btn neon" id="nextQuestion">Nächste Frage</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
